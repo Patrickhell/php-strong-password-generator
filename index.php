@@ -43,11 +43,19 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 
 
+<div class="text-center mt-5">
+    <h1 style=" color:gray">
+        Strong Password Generator
+    </h1>
+    <h3 class=" text-white">
+        Genera una password sicura
+    </h3>
 
+</div>
 
 <div class="card mb-3 m-auto mt-5" style="max-width: 800px;"  >
     <div class="row g-0 ">
-        <div class="headerCard">
+        <div class="headerCard px-4">
             <h5 class="card-title">Lunghezza della password:</h5>
             <h6 class="card-subtitle mb-2 text-muted">Consenti ripetizioni di uno o più caratteri:</h6>
         </div>
@@ -56,7 +64,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                 <form action="./password.php" method="GET" class="d-flex">
                     <div class="leftSide ">        
                         <input class="btn btn-primary " type="submit" value="Invia">
-                        <input  type="reset" value="Annulla" class="btn btn-secondary mx-3" >
+                        <input  type="reset" value="Annulla" class="btn btn-secondary mx-2" >
                     </div>
                     
                     <div class=" rightSide m-auto ">
