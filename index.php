@@ -1,8 +1,9 @@
 <?php
-
+session_start();
+if (isset($_SESSION['password'])) {
+    header('Location: ./password.php'); 
+}
 include_once __DIR__ . '/utilities/functions.php';
-
-
 
 ?>
 
@@ -52,14 +53,14 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
         </div>
         <div>
             <div class="card-body">
-                <form action="./index.php" method="GET" class="d-flex">
+                <form action="./password.php" method="GET" class="d-flex">
                     <div class="leftSide ">        
                         <input class="btn btn-primary " type="submit" value="Invia">
-                        <input class="btn btn-secondary mx-3" type="reset" value="Annulla">
+                        <input  type="reset" value="Annulla" class="btn btn-secondary mx-3" >
                     </div>
                     
                     <div class=" rightSide m-auto ">
-                        <input type="text" name="password" value = <?php echo generatedPassword(8)?> >
+                        <input type="password" name="password" value = <?php echo generatedPassword(8)?> >
                         <div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" name="accept">
