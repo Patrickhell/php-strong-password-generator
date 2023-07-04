@@ -1,16 +1,6 @@
 <?php
 
-function generatedPassword($length) {
-    $password = '';
-
-    $lettersNumbersSimbols= 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!&$£%§';
-
-    for ($i = 0; $i < $length; $i++) {
-        $password .= $lettersNumbersSimbols[rand(0, strlen($lettersNumbersSimbols) - 1)];
-    }
-    
-    return $password;
-}
+include_once __DIR__ . '/utilities/functions.php';
 
 
 
@@ -69,7 +59,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                     </div>
                     
                     <div class=" rightSide m-auto ">
-                        <input type="password" name="password" value = <?php echo generatedPassword(8)?> >
+                        <input type="text" name="password" value = <?php echo generatedPassword(8)?> >
                         <div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" name="accept">
