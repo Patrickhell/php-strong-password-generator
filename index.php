@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['password'])) {
-    header('Location: ./password.php'); 
+    header('Location: ./password.php');
 }
 include_once __DIR__ . '/utilities/functions.php';
 
@@ -11,6 +11,7 @@ include_once __DIR__ . '/utilities/functions.php';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,9 +20,10 @@ include_once __DIR__ . '/utilities/functions.php';
     <link rel="stylesheet" href="./css/style.css">
     <title>php-strong-password-generator</title>
 </head>
+
 <body>
 
-<!-- 
+    <!-- 
     Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro generatore di password (abbastanza) sicure. 
     L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle in modo ordinato.
 Milestone 1
@@ -43,75 +45,76 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 
 
-<div class="text-center mt-5">
-    <h1 style=" color:gray">
-        Strong Password Generator
-    </h1>
-    <h3 class=" text-white">
-        Genera una password sicura
-    </h3>
+    <div class="text-center mt-5">
+        <h1 style=" color:gray">
+            Strong Password Generator
+        </h1>
+        <h3 class=" text-white">
+            Genera una password sicura
+        </h3>
 
-</div>
+    </div>
 
-<div class="card mb-3 m-auto mt-5" style="max-width: 800px;"  >
-    <div class="row g-0 ">
-        <div class="headerCard px-4">
-            <h5 class="card-title">Lunghezza della password:</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Consenti ripetizioni di uno o più caratteri:</h6>
-        </div>
-        <div>
-            <div class="card-body">
-                <form action="./password.php" method="GET" class="d-flex">
-                    <div class="leftSide ">        
-                        <input class="btn btn-primary " type="submit" value="Invia">
-                        <input  type="reset" value="Annulla" class="btn btn-secondary mx-2" >
-                    </div>
-                    
-                    <div class=" rightSide m-auto ">
-                        <input type="password" name="password" value = <?php echo generatedPassword(8)?> >
-                        <div>
+    <div class="card mb-3 m-auto mt-5" style="max-width: 800px;">
+        <div class="row g-0 ">
+            <div class="headerCard px-4">
+                <h5 class="card-title">Lunghezza della password:</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Consenti ripetizioni di uno o più caratteri:</h6>
+            </div>
+            <div>
+                <div class="card-body">
+                    <form action="./password.php" method="GET" class="d-flex">
+                        <div class="leftSide ">
+                            <input class="btn btn-primary " type="submit" value="Invia">
+                            <input type="reset" value="Annulla" class="btn btn-secondary mx-2">
+                        </div>
+
+                        <div class=" rightSide m-auto ">
+                            <input type="number" name="password" value=<?php echo generatedPassword(''); ?>>
+
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" name="accept">
                                 <label class="form-check-label" for="flexRadioDefault2">
-                                 Sì
+                                    Sì
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" name="refuse">
                                 <label class="form-check-label" for="flexRadioDefault2">
-                                   No
+                                    No
+                                </label>
+                            </div>
+
+
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name="letters" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Lettere
+                                </label>
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name="numbers" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Numeri
+                                </label>
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name="symbols" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Simboli
                                 </label>
                             </div>
                         </div>
-                        <div>
-                            <div class="form-check">
-                 
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name="letters"  checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                  Lettere
-                                </label>
-                            </div>
-                            <div class="form-check">
-                  
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name="numbers"  checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                   Numeri
-                                </label>
-                            </div>
-                            <div class="form-check">
-                  
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"name="symbols"  checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                  Simboli
-                                </label>
-                            </div>
-                        </div>
-                   </div>
-                </form>
-     
+
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
 </body>
+
 </html>

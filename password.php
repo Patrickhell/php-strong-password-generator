@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once __DIR__ . '/utilities/functions.php';
 
@@ -7,6 +7,7 @@ include_once __DIR__ . '/utilities/functions.php';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,15 +17,17 @@ include_once __DIR__ . '/utilities/functions.php';
 
     <title>Generated Password</title>
 </head>
+
 <body>
     <div class=" passwordAlert col-5 m-auto text-center">
         <div class="alert alert-info" role="alert">
             <h4>
                 Your Password is:
             </h4>
-           <?php echo generatedPassword(8)?>
+            <?php echo generatedPassword($_GET['password']); ?>
         </div>
     </div>
 
 </body>
+
 </html>
